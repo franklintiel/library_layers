@@ -4,29 +4,30 @@ POC to run the same code but using multiple python and django versions (another 
 
 ## Project structure
 
+```
 |- root/\
 |- - core/\
-|- - - `__init__`.py\
+|- - - __init__.py\
 |- - - settings.py\
 |- - - settings_app.py\
 |- - - settings_local.py\
 |- - - urls.py\
 |- - library_layers/\
-|- - - layers1_2_7/ ```# Libraries configured to django-1.2.7```\
-|- - - - libraries/\
-|- - - - - `__init__`.py\
-|- - - - - django/\
-|- - - - - - __init__.py\
-|- - - - - - functions.py\
-|- - - - - - patterns.py\
-|- - - layers1_11/ ```# Libraries configured to django-1.11```\
+|- - - layers1_2_7/ # Libraries configured to django-1.2.7\
 |- - - - libraries/\
 |- - - - - __init__.py\
 |- - - - - django/\
 |- - - - - - __init__.py\
 |- - - - - - functions.py\
 |- - - - - - patterns.py\
-|- - - layers2_0_13/ ```# Libraries configured to django-2.0.13```\
+|- - - layers1_11/ # Libraries configured to django-1.11\
+|- - - - libraries/\
+|- - - - - __init__.py\
+|- - - - - django/\
+|- - - - - - __init__.py\
+|- - - - - - functions.py\
+|- - - - - - patterns.py\
+|- - - layers2_0_13/ # Libraries configured to django-2.0.13\
 |- - - - libraries/\
 |- - - - - __init__.py\
 |- - - - - django/\
@@ -50,6 +51,7 @@ POC to run the same code but using multiple python and django versions (another 
 |- - db127.sqlite3\
 |- - LICENSE\
 |- - README.md\
+```
 
 
 ## First POC
