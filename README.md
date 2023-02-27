@@ -57,11 +57,11 @@ POC to run the same code but using multiple python and django versions (another 
 ## First POC
 
 
-* Python2.7 with Django-1.2
-* Python2.7 with Django-1.11
-* Python3.6 with Django-2.0.13
-* Python3.6 with Django-3.2
-* Python3.10 with Django-4
+* Python2.7.18 with Django-1.2
+* Python2.7.18 with Django-1.11
+* Python3.6.15 with Django-2.0.13
+* Python3.9.x with Django-3.2
+* Python3.10.x with Django-4
 
 **NOTE:** In all Django versions the "." was replaced by "_"
 
