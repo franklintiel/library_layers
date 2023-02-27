@@ -254,7 +254,7 @@ Stop or kill the process:
 docker compose -f docker-compose.3.6.15.yml down
 ```
 
-## Run Python 3.6.15 with Django 3.2.18
+## Run Python 3.9.4 with Django 3.2.18
 
 Change the DJANGO_VERSION in the .env file:
 
@@ -281,7 +281,7 @@ Stop or kill the process:
 docker compose -f docker-compose.3.9.4.yml down
 ```
 
-## Run Python 3.6.15 with Django 4.1.7
+## Run Python 3.9.4 with Django 4.1.7
 
 Change the DJANGO_VERSION in the .env file:
 
