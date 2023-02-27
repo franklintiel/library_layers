@@ -161,56 +161,75 @@ DJANGO_VERSION=1_2_7
 Run command:
 
 ```
-$ docker compose -f docker-compose.2_7_18.yml down && docker compose -f docker-compose.2_7_18.yml up -d --build
+docker compose -f docker-compose.2_7_18.yml down && docker compose -f docker-compose.2_7_18.yml up -d --build
 ```
 
 Run logs:
 
 ```
-$ docker compose -f docker-compose.2_7_18.yml logs
+docker compose -f docker-compose.2_7_18.yml logs
 ```
 
 Stop or kill the process
 
-> docker compose -f docker-compose.2_7_18.yml down
+```
+docker compose -f docker-compose.2_7_18.yml down
+```
 
 
 ## Run Python 2.7 with Django 1.11
 
 Change the DJANGO_VERSION in the .env file:
 
-> DJANGO_VERSION=1_11
+```
+# .env file
+DJANGO_VERSION=1_11
+```
 
 Run command:
 
-> docker compose -f docker-compose.2_7_18.yml down && docker compose -f docker-compose.2_7_18.yml up -d --build
+```
+docker compose -f docker-compose.2_7_18.yml down && docker compose -f docker-compose.2_7_18.yml up -d --build
+```
 
 Run Logs:
 
-> docker compose -f docker-compose.2_7_18.yml logs
+```
+docker compose -f docker-compose.2_7_18.yml logs
+```
 
 Stop or kill the process
 
-> docker compose -f docker-compose.2_7_18.yml down
-
+```
+docker compose -f docker-compose.2_7_18.yml down
+```
 
 ## Run Python 3.6.15 with Django 2.0.13
 
 Change the DJANGO_VERSION in the .env file:
 
-> DJANGO_VERSION=2_0_13
+```
+# .env file
+DJANGO_VERSION=2_0_13
+```
 
 Run docker compose commands:
 
-> docker compose -f docker-compose.3.6.15.yml down && docker compose -f docker-compose.3.6.15.yml up -d --build
+```
+docker compose -f docker-compose.3.6.15.yml down && docker compose -f docker-compose.3.6.15.yml up -d --build
+```
 
 Run Logs:
 
-> docker compose -f docker-compose.3.6.15.yml logs
+```
+docker compose -f docker-compose.3.6.15.yml logs
+```
 
 Stop or kill the process:
 
-> docker compose -f docker-compose.3.6.15.yml down
+```
+docker compose -f docker-compose.3.6.15.yml down
+```
 
 
 Releases
