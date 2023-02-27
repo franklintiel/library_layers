@@ -6,7 +6,7 @@ POC to run the same code but using multiple python and django versions (another 
 
 |- root/\
 |- - core/\
-|- - - __init__.py\
+|- - - `__init__`.py\
 |- - - settings.py\
 |- - - settings_app.py\
 |- - - settings_local.py\
@@ -14,7 +14,7 @@ POC to run the same code but using multiple python and django versions (another 
 |- - library_layers/\
 |- - - layers1_2_7/ ```# Libraries configured to django-1.2.7```\
 |- - - - libraries/\
-|- - - - - __init__.py\
+|- - - - - `__init__`.py\
 |- - - - - django/\
 |- - - - - - __init__.py\
 |- - - - - - functions.py\
