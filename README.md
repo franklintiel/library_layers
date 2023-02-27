@@ -67,7 +67,7 @@ POC to run the same code but using multiple python and django versions (another 
 
 In the manage.py replace the code generated for all django versions and inclue these code in a same function called load_manager and replace the code in the manage.py,  the code must be uncoupled from the business logic and the libraries installed.
 
-``
+```
 # manage.py
 
 #!/usr/bin/env python
@@ -78,11 +78,11 @@ settings, execute_manager = load_manager(file=__file__)
 
 if __name__ == "__main__":
     execute_manager(settings)
-``
+```
 
 See load_manager function for Django 1.2.7
 
-``
+```
 # library_layers/layers1_2_7/libraries/django/functions.py
 
 def load_manager(*args, **kwargs):
@@ -99,11 +99,11 @@ def load_manager(*args, **kwargs):
     except ImportError:
         sys.stderr.write("Error: Can't find the file 'settings.py' in the directory containing %r. If appears you've customized things.\nYou'll have to run django-admin.py passing it your seetings module.\n(If the file settings.py does indeed exists, it's causing an ImportError somehow.)\n" % file)
         sys.exit(1)
-``
+```
 
 See load_manager function for Django 1.11
 
-``
+```
 def load_manager(*args, **kwargs):
     """
     layer function to translate the default execute manager
@@ -123,11 +123,11 @@ def load_manager(*args, **kwargs):
                               "available on your PYTHONPATH environment variable? Did you "
                               "forget to activate a virtual environment?")
         raise
-``
+```
 
 See load_manager function for Django 2.0.13 (same code used in Django 1.11)
 
-``
+```
 def load_manager(*args, **kwargs):
     """
     layer function to translate the default execute manager
@@ -147,21 +147,28 @@ def load_manager(*args, **kwargs):
                               "available on your PYTHONPATH environment variable? Did you "
                               "forget to activate a virtual environment?")
         raise
-``
+```
 
 ## Run Python 2.7 with Django 1.2.7
 
 Change the DJANGO_VERSION in the .env file:
 
-> DJANGO_VERSION=1_2_7
+```
+# .env file
+DJANGO_VERSION=1_2_7
+```
 
 Run command:
 
-> docker compose -f docker-compose.2_7_18.yml down && docker compose -f docker-compose.2_7_18.yml up -d --build
+```
+$ docker compose -f docker-compose.2_7_18.yml down && docker compose -f docker-compose.2_7_18.yml up -d --build
+```
 
 Run logs:
 
-> docker compose -f docker-compose.2_7_18.yml logs
+```
+$ docker compose -f docker-compose.2_7_18.yml logs
+```
 
 Stop or kill the process
 
