@@ -5,7 +5,7 @@ services:
     container_name: django-app
     build:
       context: .
-      dockerfile: ./dockerfiles/Dockerfile2_7_18
+      dockerfile: ./dockerfiles/Dockerfile3_9_4
       args:
         DJANGO_VERSION: ${DJANGO_VERSION}
     volumes:

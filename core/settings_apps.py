@@ -3,7 +3,7 @@ DJANGO_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sites',
     'django.contrib.messages',
-    # 'django.contrib.admin',
+    'django.contrib.admin',
 )
 
 THIRD_PARTY_APPS = tuple()

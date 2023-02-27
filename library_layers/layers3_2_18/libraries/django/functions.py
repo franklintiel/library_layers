@@ -4,12 +4,10 @@ def load_manager(*args, **kwargs):
     """
     import os
     import sys
-    from django.core.management import execute_from_command_line
     
     try:
-
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
-
+        from django.core.management import execute_from_command_line
         return sys.argv, execute_from_command_line
     except ImportError:
         try:
@@ -25,7 +23,7 @@ def include(*args, **kwargs):
     """
     function layer to translate the code useed in the defaults.include()
     """
-    from django.conf.urls import include as default_include
+    from django.urls import include as default_include
     return default_include(*args, **kwargs)
 
 
@@ -33,6 +31,6 @@ def url(*args, **kwargs):
     """
     function layer to translate the code used in the defaults.url()
     """
-    from django.conf.urls import url as default_url
+    from django.urls import path as default_url
     return default_url(*args, **kwargs)
 

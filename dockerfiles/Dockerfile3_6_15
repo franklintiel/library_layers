@@ -10,7 +10,7 @@ ENV DJANGO_VERSION $DJANGO_VERSION
 RUN echo $DJANGO_VERSION
 
 RUN pip install --upgrade pip
-COPY ./requirements${DJANGO_VERSION}.txt .
+COPY ./requirements/requirements${DJANGO_VERSION}.txt .
 RUN pip install -r requirements${DJANGO_VERSION}.txt
 
 COPY . .
