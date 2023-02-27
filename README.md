@@ -34,6 +34,7 @@ POC to run the same code but using multiple python and django versions (another 
 |------ __init__.py
 |------ functions.py
 |------ patterns.py
+|------ settings.py
 |--- layers1_11/ # Libraries configured to django-1.11
 |---- libraries/
 |----- __init__.py
@@ -41,6 +42,7 @@ POC to run the same code but using multiple python and django versions (another 
 |------ __init__.py
 |------ functions.py
 |------ patterns.py
+|------ settings.py
 |--- layers2_0_13/ # Libraries configured to django-2.0.13
 |---- libraries/
 |----- __init__.py
@@ -48,6 +50,25 @@ POC to run the same code but using multiple python and django versions (another 
 |------ __init__.py
 |------ functions.py
 |------ patterns.py
+|------ settings.py
+|--- __init__.py
+|--- layers3_2_18/ # Libraries configured to django-3.2.18
+|---- libraries/
+|----- __init__.py
+|----- django/
+|------ __init__.py
+|------ functions.py
+|------ patterns.py
+|------ settings.py
+|--- __init__.py
+|--- layers4_1_7/ # Libraries configured to django-4.1.7
+|---- libraries/
+|----- __init__.py
+|----- django/
+|------ __init__.py
+|------ functions.py
+|------ patterns.py
+|------ settings.py
 |--- __init__.py
 |--- loaders.py
 |--- exceptions.py
@@ -60,8 +81,8 @@ POC to run the same code but using multiple python and django versions (another 
 * Python2.7.18 with Django-1.2
 * Python2.7.18 with Django-1.11
 * Python3.6.15 with Django-2.0.13
-* Python3.9.x with Django-3.2
-* Python3.10.x with Django-4
+* Python3.9.4 with Django-3.2.18
+* Python3.9.4 with Django-4.1.7
 
 **NOTE:** In all Django versions the "." was replaced by "_"
 
@@ -233,8 +254,62 @@ Stop or kill the process:
 docker compose -f docker-compose.3.6.15.yml down
 ```
 
+## Run Python 3.6.15 with Django 3.2.18
+
+Change the DJANGO_VERSION in the .env file:
+
+```
+# .env file
+DJANGO_VERSION=3_2_18
+```
+
+Run docker compose commands:
+
+```
+docker compose -f docker-compose.3.9.4.yml down && docker compose -f docker-compose.3.9.4.yml up -d --build
+```
+
+Run Logs:
+
+```
+docker compose -f docker-compose.3.9.4.yml logs
+```
+
+Stop or kill the process:
+
+```
+docker compose -f docker-compose.3.9.4.yml down
+```
+
+## Run Python 3.6.15 with Django 4.1.7
+
+Change the DJANGO_VERSION in the .env file:
+
+```
+# .env file
+DJANGO_VERSION=4_1_7
+```
+
+Run docker compose commands:
+
+```
+docker compose -f docker-compose.3.9.4.yml down && docker compose -f docker-compose.3.9.4.yml up -d --build
+```
+
+Run Logs:
+
+```
+docker compose -f docker-compose.3.9.4.yml logs
+```
+
+Stop or kill the process:
+
+```
+docker compose -f docker-compose.3.9.4.yml down
+```
 
 Releases
 - 1.0 - POC for Django 1.2.7, 1.11 and 2.0.13 only in manage.py, main urls.py and global url patterns.
+- 2.0 - POC for Django 3.2.18 and 4.1.7 only in manage.py, main urls.py and global url patterns.
 
 
