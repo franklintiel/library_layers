@@ -4,7 +4,7 @@ POC to run the same code but using multiple python and django versions (another 
 
 ## Project structure
 
-|-root/
+|-root/\
 |--core/
 |---__init__.py
 |---settings.py
