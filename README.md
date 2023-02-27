@@ -12,45 +12,45 @@ POC to run the same code but using multiple python and django versions (another 
 |--- settings_app.py
 |--- settings_local.py
 |--- urls.py
-|-- library_layers/
+|-- .dockerignore
+|-- .env
+|-- .gitignore
+|-- __init__.py
+|-- docker-compose.2_7_18.yml
+|-- docker-compose.3_6_15.yml
+|-- Dockerfile2_7_18
+|-- Dockerfile3_6_15
+|-- requirements1_2_7.txt
+|-- requirements1_11.txt
+|-- requirements2_0_13.txt
+|-- db127.sqlite3
+|-- LICENSE
+|-- README.md
+|-- library_layers/ # this is where the magic happens
 |--- layers1_2_7/ # Libraries configured to django-1.2.7
 |---- libraries/
 |----- __init__.py
 |----- django/
 |------ __init__.py
 |------ functions.py
-|- - - - - - patterns.py
-|- - - layers1_11/ # Libraries configured to django-1.11
-|- - - - libraries/
-|- - - - - __init__.py
-|- - - - - django/\
-|- - - - - - __init__.py
-|- - - - - - functions.py
-|- - - - - - patterns.py
-|- - - layers2_0_13/ # Libraries configured to django-2.0.13
-|- - - - libraries/
-|- - - - - __init__.py
-|- - - - - django/
-|- - - - - - __init__.py
-|- - - - - - functions.py
-|- - - - - - patterns.py
-|- - - __init__.py
-|- - - loaders.py
-|- - - exceptions.py
-|- - .dockerignore
-|- - .env
-|- - .gitignore
-|- - __init__.py
-|- - docker-compose.2_7_18.yml
-|- - docker-compose.3_6_15.yml
-|- - Dockerfile2_7_18
-|- - Dockerfile3_6_15
-|- - requirements1_2_7.txt
-|- - requirements1_11.txt
-|- - requirements2_0_13.txt
-|- - db127.sqlite3
-|- - LICENSE
-|- - README.md
+|------ patterns.py
+|--- layers1_11/ # Libraries configured to django-1.11
+|---- libraries/
+|----- __init__.py
+|----- django/\
+|------ __init__.py
+|------ functions.py
+|------ patterns.py
+|--- layers2_0_13/ # Libraries configured to django-2.0.13
+|---- libraries/
+|----- __init__.py
+|----- django/
+|------ __init__.py
+|------ functions.py
+|------ patterns.py
+|--- __init__.py
+|--- loaders.py
+|--- exceptions.py
 ```
 
 
