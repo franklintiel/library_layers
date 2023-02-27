@@ -1,0 +1,4 @@
+Django==1.11
+env-tools==2.2.0
+
+

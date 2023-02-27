@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  web:
+    container_name: django-app
+    build:
+      context: .
+      dockerfile: Dockerfile2_7_18
+      args:
+        DJANGO_VERSION: ${DJANGO_VERSION}
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 8000:8000
+    command: python manage.py runserver 0.0.0.0:8000
+    env_file:
+      ./.env

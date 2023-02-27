@@ -1,0 +1,19 @@
+FROM python:2.7.18-alpine
+
+WORKDIR /usr/src/app
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+ARG DJANGO_VERSION
+ENV DJANGO_VERSION $DJANGO_VERSION
+RUN echo $DJANGO_VERSION
+
+RUN pip install --upgrade pip
+COPY ./requirements${DJANGO_VERSION}.txt .
+RUN pip install -r requirements${DJANGO_VERSION}.txt
+
+COPY . .
+
+
+
