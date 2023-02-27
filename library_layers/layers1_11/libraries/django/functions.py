@@ -4,10 +4,12 @@ def load_manager(*args, **kwargs):
     """
     import os
     import sys
+    from django.core.management import execute_from_command_line
     
     try:
+
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
-        from django.core.management import execute_from_command_line
+
         return sys.argv, execute_from_command_line
     except ImportError:
         try:
