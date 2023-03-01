@@ -1,3 +1,4 @@
 *.pyc
 .python_version
 *.sqlite3
+.python-version
