@@ -90,8 +90,6 @@ POC to run the same code but using multiple python and django versions (another 
 
 In the manage.py replace the code generated for all django versions and inclue these code in a same function called load_manager and replace the code in the manage.py,  the code must be uncoupled from the business logic and the libraries installed.
 
-```
-
 
 ## Run Python 2.7 with Django 1.2.7
 
@@ -122,19 +120,20 @@ docker compose -f docker-compose.2_7_18.yml down
 
 Syncdb and Run Migrations
 
+
 ```
 # access to docker container
-docker exec -it django-app sh
+docker exec -it django-app sh 
 
 # run the syncdb (for first time)
-python manage.py syncdb
-# create superuser
+# Create a user with this credentials:
 # username: admin
 # email: info@domain.com
-# password: 1234
+# password: admin@1234
+python manage.py syncdb 
 
 # Run migrations
-python manage.py migrate
+python manage.py migrate 
 ```
 
 
@@ -168,14 +167,14 @@ docker compose -f docker-compose.2_7_18.yml down
 Syncdb and Run Migrations
 
 ```
-# access to docker container
+#\ access to docker container
 docker exec -it django-app sh
 
 # create superuser
-python manage.py createsuperuser
 # username: admin
 # email: info@domain.com
 # password: 1234
+python manage.py createsuperuser
 
 # Run migrations
 python manage.py migrate
@@ -216,10 +215,10 @@ Syncdb and Run Migrations
 docker exec -it django-app sh
 
 # create superuser
-python manage.py createsuperuser
 # username: admin
 # email: info@domain.com
 # password: 1234
+python manage.py createsuperuser
 
 # Run migrations
 python manage.py migrate
@@ -260,10 +259,10 @@ Syncdb and Run Migrations
 docker exec -it django-app sh
 
 # create superuser
-python manage.py createsuperuser
 # username: admin
 # email: info@domain.com
 # password: 1234
+python manage.py createsuperuser
 
 # Run migrations
 python manage.py migrate
@@ -304,10 +303,10 @@ Syncdb and Run Migrations
 docker exec -it django-app sh
 
 # create superuser
-python manage.py createsuperuser
 # username: admin
 # email: info@domain.com
 # password: 1234
+python manage.py createsuperuser
 
 # Run migrations
 python manage.py migrate
@@ -316,5 +315,6 @@ python manage.py migrate
 # Releases
 - 1.0 - POC for Django 1.2.7, 1.11 and 2.0.13 only in manage.py, main urls.py and global url patterns.
 - 2.0 - POC for Django 3.2.18 and 4.1.7 only in manage.py, main urls.py and global url patterns.
+- 3.0 - Connecting process to do migrations and start the admin section for all django versions
 
 
