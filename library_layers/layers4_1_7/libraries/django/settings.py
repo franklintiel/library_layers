@@ -31,3 +31,12 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
+
+STATIC_URL = '/static/'
+STATIC_ROOT = ''
+
+THIRD_PARTY_APPS = list()
+
+DJANGO_APPS = [
+    'django.contrib.staticfiles',
+]
