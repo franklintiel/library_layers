@@ -3,3 +3,4 @@ Django==1.2.7
 env-tools==2.2.0
 six==1.16.0
 tini==3.0.1
+South==1.0.2
