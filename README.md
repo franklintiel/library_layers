@@ -91,86 +91,7 @@ POC to run the same code but using multiple python and django versions (another 
 In the manage.py replace the code generated for all django versions and inclue these code in a same function called load_manager and replace the code in the manage.py,  the code must be uncoupled from the business logic and the libraries installed.
 
 ```
-# manage.py
 
-#!/usr/bin/env python
-from library_layers.libraries.django.functions import load_manager
-
-settings, execute_manager = load_manager(file=__file__)
-
-
-if __name__ == "__main__":
-    execute_manager(settings)
-```
-
-See load_manager function for Django 1.2.7
-
-```
-# library_layers/layers1_2_7/libraries/django/functions.py
-
-def load_manager(*args, **kwargs):
-    """
-    layer function to translate the default execute manager
-    """
-    import sys
-    from django.core.management import execute_manager
-
-    try:
-        file = kwargs.get('file', __file__)
-        from core import settings
-        return settings, execute_manager
-    except ImportError:
-        sys.stderr.write("Error: Can't find the file 'settings.py' in the directory containing %r. If appears you've customized things.\nYou'll have to run django-admin.py passing it your seetings module.\n(If the file settings.py does indeed exists, it's causing an ImportError somehow.)\n" % file)
-        sys.exit(1)
-```
-
-See load_manager function for Django 1.11
-
-```
-def load_manager(*args, **kwargs):
-    """
-    layer function to translate the default execute manager
-    """
-    import os
-    import sys
-
-    try:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
-        from django.core.management import execute_from_command_line
-        return sys.argv, execute_from_command_line
-    except ImportError:
-        try:
-            import django
-        except ImportError:
-            raise ImportError("Couldn't import Django. Are you sure its installed and "
-                              "available on your PYTHONPATH environment variable? Did you "
-                              "forget to activate a virtual environment?")
-        raise
-```
-
-See load_manager function for Django 2.0.13 (same code used in Django 1.11)
-
-```
-def load_manager(*args, **kwargs):
-    """
-    layer function to translate the default execute manager
-    """
-    import os
-    import sys
-
-    try:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
-        from django.core.management import execute_from_command_line
-        return sys.argv, execute_from_command_line
-    except ImportError:
-        try:
-            import django
-        except ImportError:
-            raise ImportError("Couldn't import Django. Are you sure its installed and "
-                              "available on your PYTHONPATH environment variable? Did you "
-                              "forget to activate a virtual environment?")
-        raise
-```
 
 ## Run Python 2.7 with Django 1.2.7
 
@@ -197,6 +118,23 @@ Stop or kill the process
 
 ```
 docker compose -f docker-compose.2_7_18.yml down
+```
+
+Syncdb and Run Migrations
+
+```
+# access to docker container
+docker exec -it django-app sh
+
+# run the syncdb (for first time)
+python manage.py syncdb
+# create superuser
+# username: admin
+# email: info@domain.com
+# password: 1234
+
+# Run migrations
+python manage.py migrate
 ```
 
 
@@ -227,6 +165,23 @@ Stop or kill the process
 docker compose -f docker-compose.2_7_18.yml down
 ```
 
+Syncdb and Run Migrations
+
+```
+# access to docker container
+docker exec -it django-app sh
+
+# create superuser
+python manage.py createsuperuser
+# username: admin
+# email: info@domain.com
+# password: 1234
+
+# Run migrations
+python manage.py migrate
+```
+
+
 ## Run Python 3.6.15 with Django 2.0.13
 
 Change the DJANGO_VERSION in the .env file:
@@ -253,6 +208,23 @@ Stop or kill the process:
 ```
 docker compose -f docker-compose.3.6.15.yml down
 ```
+
+Syncdb and Run Migrations
+
+```
+# access to docker container
+docker exec -it django-app sh
+
+# create superuser
+python manage.py createsuperuser
+# username: admin
+# email: info@domain.com
+# password: 1234
+
+# Run migrations
+python manage.py migrate
+```
+
 
 ## Run Python 3.9.4 with Django 3.2.18
 
@@ -281,6 +253,23 @@ Stop or kill the process:
 docker compose -f docker-compose.3.9.4.yml down
 ```
 
+Syncdb and Run Migrations
+
+```
+# access to docker container
+docker exec -it django-app sh
+
+# create superuser
+python manage.py createsuperuser
+# username: admin
+# email: info@domain.com
+# password: 1234
+
+# Run migrations
+python manage.py migrate
+```
+
+
 ## Run Python 3.9.4 with Django 4.1.7
 
 Change the DJANGO_VERSION in the .env file:
@@ -308,7 +297,23 @@ Stop or kill the process:
 docker compose -f docker-compose.3.9.4.yml down
 ```
 
-Releases
+Syncdb and Run Migrations
+
+```
+# access to docker container
+docker exec -it django-app sh
+
+# create superuser
+python manage.py createsuperuser
+# username: admin
+# email: info@domain.com
+# password: 1234
+
+# Run migrations
+python manage.py migrate
+```
+
+# Releases
 - 1.0 - POC for Django 1.2.7, 1.11 and 2.0.13 only in manage.py, main urls.py and global url patterns.
 - 2.0 - POC for Django 3.2.18 and 4.1.7 only in manage.py, main urls.py and global url patterns.
 
