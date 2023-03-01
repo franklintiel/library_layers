@@ -1,10 +1,11 @@
 # Django settings for myapp project.
 import os
 
-BASE_DIR=os.path.dirname(__file__)
+BASE_DIR=os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+
+from library_layers.libraries.django.settings import *
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -56,24 +57,16 @@ SECRET_KEY = 'f(^qv#b60psi(@bcqc=%r-d*gh)j883ghu1c5&ju^(((_ao52%'
 # List of callables that know how to import templates from various sources.
 
 # SETTINGS CONSTANTS EXTRACT FROM LIBRARY LAYERS 
-from library_layers.libraries.django.settings import *
 
 ROOT_URLCONF = 'myapp.urls'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
-
-
 try:
-    exec(open(os.path.join(BASE_DIR, 'settings_apps.py')).read())
+    exec(open(os.path.join(BASE_DIR, 'core/settings_apps.py')).read())
 except IOError as err:
     raise err
 
 try:
-    exec(open(os.path.join(BASE_DIR, 'settings_local.py')).read())
+    exec(open(os.path.join(BASE_DIR, 'core/settings_local.py')).read())
 except IOError as err:
     raise err
 
