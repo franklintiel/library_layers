@@ -7,23 +7,30 @@ POC to run the same code but using multiple python and django versions (another 
 ```
 |- root/
 |-- core/
-|--- __init__.py
-|--- settings.py
-|--- settings_app.py
-|--- settings_local.py
-|--- urls.py
+|---- __init__.py
+|---- settings.py
+|---- settings_app.py
+|---- settings_local.py
+|---- urls.py
 |-- .dockerignore
 |-- .env
 |-- .gitignore
 |-- __init__.py
 |-- docker-compose.2_7_18.yml
 |-- docker-compose.3_6_15.yml
-|-- Dockerfile2_7_18
-|-- Dockerfile3_6_15
-|-- requirements1_2_7.txt
-|-- requirements1_11.txt
-|-- requirements2_0_13.txt
-|-- db127.sqlite3
+|-- docker-compose.3_9_4.yml
+|-- dbs/ # all databases must be generated when the docker containers run.
+|---- .gitkeep
+|-- dockerfiles/
+|---- Dockerfile2_7_18
+|---- Dockerfile3_6_15
+|---- Dockerfile3_9_4
+|-- requirements/
+|---- requirements1_2_7.txt
+|---- requirements1_11.txt
+|---- requirements2_0_13.txt
+|---- requirements3_2_18.txt
+|---- requirements4_1_7.txt
 |-- LICENSE
 |-- README.md
 |-- library_layers/ # this is where the magic happens
