@@ -11,6 +11,8 @@ RUN echo $DJANGO_VERSION
 
 RUN pip install --upgrade pip
 COPY ./requirements/requirements${DJANGO_VERSION}.txt .
-RUN pip install -r requirements${DJANGO_VERSION}.txt
+RUN pip install -r requirements${DJANGO_VERSION}.txt --ignore-installed --force-reinstall --upgrade --no-cache-dir
 
 COPY . .
+
+ENTRYPOINT ["./entrypoint.sh"]
